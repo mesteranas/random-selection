@@ -31,7 +31,7 @@ class main (qt.QMainWindow):
         qt1.QShortcut("delete",self).activated.connect(self.fdelete)
         qt1.QShortcut("ctrl+s",self).activated.connect(self.fnor)
         qt1.QShortcut("ctrl+shift+s",self).activated.connect(self.fmol)
-        qt1.QShortcut("f2",self).activated.connect(lambda:gui.Edit(self).exec())
+        qt1.QShortcut("f2",self).activated.connect(lambda: guiTools.speak(_("error"))if self.names.count()==0 else gui.Edit(self).exec())
         layout.addWidget(self.choose)
         self.setting=qt.QPushButton(_("settings"))
         self.setting.setDefault(True)
